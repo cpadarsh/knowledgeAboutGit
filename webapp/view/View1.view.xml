@@ -1,0 +1,102 @@
+<mvc:View xmlns:fb="sap.ui.comp.filterbar" controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+     xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+    <Page id="page" title="{i18n>title}">
+     <content>
+     		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem id="fgi" name="Name" label="ProductName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="mcb1"
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{/Products}"
+								 		>
+											<core:Item id="ci1" key="{ProductName}" text="{ProductName}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem id="fgi2" name="Category" label="CategoryID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="mcb2"
+											name="Category"
+											selectionChange=".onSelectionChange"
+											items="{/Categories}"
+										>
+											<core:Item id="ci2" key="{CategoryName}" text="{CategoryName}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem id="fgi3" name="SupplierName" label="SupplierID" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="mcb3"
+											name="SupplierName"
+											selectionChange=".onSelectionChange"
+											items="{/Suppliers}"
+										>
+											<core:Item id="ci3" key="{CompanyName}" text="{CompanyName}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+    <Table id="tp" items="{/Products}" growing="true" growingThreshold="5" alternateRowColors="true">
+    <columns>
+    <Column id="pid">
+    <Text id="pv" text="ProductID"></Text>
+    </Column>
+    <Column id="c2">
+    <Text id="t2" text="ProductName"></Text>
+    </Column>
+    <Column id="c3">
+    <Text id="t3" text="SupplierID"></Text>
+    </Column>
+    <Column id="c4">
+    <Text id="t4" text="CategoryID">
+    </Text>
+    </Column>
+    <Column id="c5">
+    <Text id="t5" text="QuantityPerUnit">
+    </Text>
+    </Column>
+    <Column id="c6" >
+    <Text id="t6" text="UnitPrice">
+    </Text>
+    </Column>
+    <Column id="c7">
+    <Text id="t7" text="UnitsInStock">
+    </Text>
+    </Column>
+    <Column id="c8">
+    <Text id="t8" text="UnitsOnOrder">
+    </Text>
+    </Column>
+    <Column id="c9">
+    <Text id="t9" text="ReorderLevel">
+    </Text>
+    </Column>
+    <Column id="c10">
+    <Text id="t10" text="Discontinued">
+    </Text>
+    </Column>
+    </columns>
+    <items>
+    <ColumnListItem id="c1">
+    <Text id="t1" text="{ProductID}"></Text>
+    <Text id="t12" text="{ProductName}"></Text>
+    <Text id="t13" text="{SupplierID}"></Text>
+    <Text id="t14" text="{CategoryID}"></Text>
+    <Text id="t15" text="{QuantityPerUnit}"></Text>
+    <Text id="t16" text="{UnitPrice}"></Text>
+    <Text id="t17" text="{UnitsInStock}"></Text>
+    <Text id="t18" text="{UnitsOnOrder}"></Text>
+    <Text id="t19" text="{ReorderLevel}"></Text>
+    <Text id="t20" text="{Discontinued}"></Text>
+    </ColumnListItem>
+    </items>
+    </Table>
+    </content>
+    </Page>
+</mvc:View>
