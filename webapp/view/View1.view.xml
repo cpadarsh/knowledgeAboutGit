@@ -1,10 +1,11 @@
-<mvc:View xmlns:fb="sap.ui.comp.filterbar" controllerName="project1.controller.View1"
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns:fb="sap.ui.comp.filterbar" controllerName="project1.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
      xmlns:core="sap.ui.core"
     xmlns="sap.m">
 
     <Page id="page" title="{i18n>title}">
      <content>
+     <form:SimpleForm id="sf"></form:SimpleForm>
      <SearchField id="srh" placeholder="search field"></SearchField>
      		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
 							<fb:filterGroupItems>
