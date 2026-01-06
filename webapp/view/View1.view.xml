@@ -5,6 +5,7 @@
 
     <Page id="page" title="{i18n>title}">
      <content>
+     <SearchField id="srh" placeholder="search field"></SearchField>
      		<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
 							<fb:filterGroupItems>
 								<fb:FilterGroupItem id="fgi" name="Name" label="ProductName" groupName="Group1" visibleInFilterBar="true">
